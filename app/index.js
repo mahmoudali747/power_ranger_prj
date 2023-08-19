@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react-native";
 import { View , ScrollView , SafeAreaView } from "react-native";
 import { Stack , useRouter } from "expo-router";
