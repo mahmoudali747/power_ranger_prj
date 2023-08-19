@@ -45,11 +45,15 @@ const Welcome = () => {
                 style={styles.tab(activeJopTybe , item)}
                 onPress={() => {
                   setActiveJopTybe(item);
+                  router.push(`/search/${item}`)
                 }}
               >
-                <Text>{item}</Text>
+                <Text style={styles.tabText(activeJopTybe , item  )}>{item}</Text>
               </TouchableOpacity>
             )}
+                keyExtractor={item => item }
+                contentContainerStyle={{columnGap:SIZES.small}}
+                horizontal 
           />
       </View>
     </View>
