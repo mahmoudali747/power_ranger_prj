@@ -1,9 +1,5 @@
 import { Stack } from "expo-router";
-import { useCallback } from "react";
-import { useFonts } from "expo-font";
-import * as SplashScreen from 'expo-splash-screen';
-
-SplashScreen.preventAutoHideAsync();
+q
 
 const Layout = () => {
     const [fontsLoaded] = useFonts({
@@ -12,16 +8,14 @@ const Layout = () => {
         DMRegular : require('../assets/fonts/DmSans-Regular.ttf'),
     })
 
-    const ONLayoutRootView = useCallback (async () =>{
+    const onLayoutRootView = useCallback (async () =>{
         if(fontsLoaded){
-            console.log ("haaa") ;
             await SplashScreen.hideAsync();
         }
     } , [fontsLoaded])
     if (!fontsLoaded) return null;
 
-    return <Stack  ONLayout={ONLayoutRootView}/> ;
-
+    return <Stack  onLayout={onLayoutRootView}/> ;
 }
 
 export default Layout ;
